@@ -1,6 +1,6 @@
 from flask.views import MethodView
 from wtforms import Form, StringField, SubmitField
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,19 +21,21 @@ class BillFormPage(MethodView):
 
 class ResultsPage(MethodView):
 
-    def get(self):
-        return "WALA!!!"
+    def post(self):
+        billform = BillForm(request.form)
+        amount = billform.amount.data
+        return amount
 
 
 class BillForm(Form):
-    amount = StringField("Bill Amount: ")
-    period = StringField("Bill Period: ")
+    amount = StringField("Bill Amount: ", default=100)
+    period = StringField("Bill Period: ", default="Aug 2039")
 
-    name1 = StringField("Name: ")
-    days_in_house1 = StringField("Days in the house: ")
+    name1 = StringField("Name: ", default="AA")
+    days_in_house1 = StringField("Days in the house: ", default=10)
 
-    name2 = StringField("Name: ")
-    days_in_house2 = StringField("Days in the house: ")
+    name2 = StringField("Name: ", default="BB")
+    days_in_house2 = StringField("Days in the house: ", default=20)
 
     button =SubmitField("Caluclate")
 
