@@ -1,5 +1,5 @@
 from flask.views import MethodView
-from wtforms import Form, StringField
+from wtforms import Form, StringField, SubmitField
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -26,6 +26,14 @@ class ResultsPage(MethodView):
 class BillForm(Form):
     amount = StringField("Bill Amount: ")
     period = StringField("Bill Period: ")
+
+    name1 = StringField("Name: ")
+    days_in_house1 = StringField("Days in the house: ")
+
+    name2 = StringField("Name: ")
+    days_in_house2 = StringField("Days in the house: ")
+
+    button =SubmitField("Caluclate")
 
 
 app.add_url_rule('/',
