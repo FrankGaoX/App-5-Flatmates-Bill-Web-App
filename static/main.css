@@ -1,6 +1,12 @@
 h2 {
-    color: yellow;
+    color: darkgrey;
     text-align: center;
-    font-size: 50px
+    font-size: 50px;
+}
+
+input[type=text] {
+    width: 15%;
+    padding: 10px 80px;
+    margin: 10px 0;
 }
 
