@@ -10,3 +10,13 @@ input[type=text] {
     margin: 10px 0;
 }
 
+input[type=submit]{
+    width:50%;
+    background-color: CornflowerBlue;
+    color: white;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 6px
+
+}
+
