@@ -19,6 +19,9 @@ class BillFormPage(MethodView):
         return render_template('bill_form_page.html',
                                billform=bill_form)
 
+    def post(self):
+        return
+
 
 class ResultsPage(MethodView):
 
